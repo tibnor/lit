@@ -60,7 +60,10 @@
     "./lib/*.js": "./lib/*.js"
   },
   "dependencies": {
+    "@parse5/tools": "^0.3.0",
+    "lit-html": "3.0.0-pre.1",
     "package-json-type": "^1.0.3",
+    "parse5": "^7.1.2",
     "typescript": "~5.2.0"
   }
 }
