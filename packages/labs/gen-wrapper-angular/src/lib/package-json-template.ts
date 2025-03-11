@@ -23,25 +23,17 @@ export const packageJsonTemplate = (
     {
       name: angularPackageName,
       type: 'module',
-      scripts: {
-        build: 'tsc',
-        'build:watch': 'tsc --watch',
-      },
       // TODO(kschaaf): Version in lock-step with source?
       version: packageJson.version,
       dependencies: {
         [packageJson.name!]: '^' + packageJson.version!,
       },
       peerDependencies: {
-        '@angular/common': '^13.3.0',
-        '@angular/core': '^13.3.0',
-      },
-      devDependencies: {
-        // Use typescript from source package, assuming it exists
-        typescript: packageJson?.devDependencies?.typescript ?? '~4.7.4',
+        '@angular/common': '>=13.3.0',
+        '@angular/core': '>=13.3.0',
       },
       files: [
-        ...litModules.map(({module}) => module.jsPath.replace(/\\/g, '/')),
+        ...litModules.map(({module}) => module.sourcePath.replace(/\\/g, '/')),
       ],
     },
     null,
