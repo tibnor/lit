@@ -23,10 +23,9 @@ const getTypeReferencesForMap = (
 const getElementTypeImports = (declarations: LitElementDeclaration[]) => {
   const refs: Reference[] = [];
   declarations.forEach((declaration) => {
-    const {/*events,*/ reactiveProperties} = declaration;
+    const {events, reactiveProperties} = declaration;
     refs.push(
-      // TODO(sorvell): Add event types.
-      //...getTypeReferencesForMap(events),
+      ...getTypeReferencesForMap(events),
       ...getTypeReferencesForMap(reactiveProperties)
     );
   });
