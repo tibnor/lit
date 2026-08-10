@@ -768,6 +768,159 @@
     },
     {
       "kind": "javascript-module",
+      "path": "element-native-events.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "ElementNativeEvents",
+          "description": "An element that reuses a native event name.\n\n`input` is one of the event names Svelte delegates when a handler is bound as\nan `on<name>={...}` attribute, and these events are dispatched with the\ndefault options (`bubbles: false, composed: false`), so a delegated handler\nlistening at the app root never sees them. `value-changed` is the control: it\nis not a native name, so it is never delegated.",
+          "superclass": {"name": "LitElement", "package": "lit"},
+          "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "privacy": "public",
+              "type": {"text": "number"},
+              "default": "0",
+              "attribute": "value"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1>",
+                  "references": [
+                    {
+                      "name": "TemplateResult",
+                      "package": "lit-html",
+                      "start": 0,
+                      "end": 14
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "fireInput",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "detail",
+                  "type": {
+                    "text": "NativeDetail",
+                    "references": [
+                      {
+                        "name": "NativeDetail",
+                        "package": "@lit-internal/test-element-a",
+                        "module": "element-native-events.js",
+                        "start": 0,
+                        "end": 12
+                      }
+                    ]
+                  },
+                  "default": "{value: 1}",
+                  "optional": true
+                }
+              ],
+              "return": {"type": {"text": "void"}}
+            },
+            {
+              "kind": "method",
+              "name": "fireValueChanged",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "detail",
+                  "type": {
+                    "text": "NativeDetail",
+                    "references": [
+                      {
+                        "name": "NativeDetail",
+                        "package": "@lit-internal/test-element-a",
+                        "module": "element-native-events.js",
+                        "start": 0,
+                        "end": 12
+                      }
+                    ]
+                  },
+                  "default": "{value: 2}",
+                  "optional": true
+                }
+              ],
+              "return": {"type": {"text": "void"}}
+            }
+          ],
+          "tagName": "element-native-events",
+          "customElement": true,
+          "attributes": [
+            {"name": "value", "type": {"text": "number"}, "fieldName": "value"}
+          ],
+          "events": [
+            {
+              "name": "input",
+              "type": {
+                "text": "CustomEvent<NativeDetail>",
+                "references": [
+                  {
+                    "name": "CustomEvent",
+                    "package": "global:",
+                    "start": 0,
+                    "end": 11
+                  },
+                  {
+                    "name": "NativeDetail",
+                    "package": "@lit-internal/test-element-a",
+                    "module": "element-native-events.js",
+                    "start": 12,
+                    "end": 24
+                  }
+                ]
+              },
+              "description": "A non-bubbling event reusing a native event name"
+            },
+            {
+              "name": "value-changed",
+              "type": {
+                "text": "CustomEvent<NativeDetail>",
+                "references": [
+                  {
+                    "name": "CustomEvent",
+                    "package": "global:",
+                    "start": 0,
+                    "end": 11
+                  },
+                  {
+                    "name": "NativeDetail",
+                    "package": "@lit-internal/test-element-a",
+                    "module": "element-native-events.js",
+                    "start": 12,
+                    "end": 24
+                  }
+                ]
+              },
+              "description": "A non-bubbling event with a kebab-case name"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ElementNativeEvents",
+          "declaration": {"name": "ElementNativeEvents"}
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "element-native-events",
+          "declaration": {"name": "ElementNativeEvents"}
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "element-props.js",
       "declarations": [
         {
