@@ -48,7 +48,9 @@ export const wrapperModuleTemplate = (
   if (elements.filter((e) => e.events.size).length > 0) {
     imports.push(`EventEmitter`, `Output`);
   }
-  const typeImports = getElementTypeImports(elements);
+  // `@lit-labs/analyzer` builds module specifiers with `path.join`, which
+  // uses `\` on Windows. Import specifiers must always use `/`.
+  const typeImports = getElementTypeImports(elements).replace(/\\/g, '/');
   const typeExports = getElementTypeExportsFromImports(typeImports);
   moduleJsPath = moduleJsPath.replace(/\\/g, '/');
   return javascript`import {
